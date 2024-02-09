@@ -1,0 +1,10 @@
+.search {
+  max-width: 20rem;
+
+  &Input {
+    padding-left: 3rem;
+    background-image: url('@images/search.svg');
+    background-repeat: no-repeat;
+    background-position: top 50% left 0.75rem;
+  }
+}
