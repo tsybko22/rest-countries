@@ -22,12 +22,9 @@
     "noFallthroughCasesInSwitch": true,
 
     /* Aliases */
-    "baseUrl": "../",
+    "baseUrl": ".",
     "paths": {
-      "@/*": ["./*"],
-      "@components/*": ["components/*"],
-      "@pages/*": ["pages/*"],
-      "@helpers/*": ["helpers/*"],
+      "@/*": ["src/*"],
       "@images/*": ["assets/images/*"]
     }
   },
