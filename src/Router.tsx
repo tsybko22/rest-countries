@@ -19,9 +19,9 @@ const Router = () => {
           path: 'country/:countryName',
           element: <CountryDetailsPage />,
         },
-        { path: '*', element: <ErrorPage /> },
       ],
     },
+    { path: '*', element: <ErrorPage /> },
   ]);
 
   return <RouterProvider router={router} />;

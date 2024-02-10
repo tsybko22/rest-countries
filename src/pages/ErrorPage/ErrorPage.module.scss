@@ -1,0 +1,45 @@
+.errorPage {
+  display: grid;
+  padding: 1.75rem 2rem;
+  min-height: 100dvh;
+  place-content: center;
+  text-align: center;
+
+  &Title {
+    margin-bottom: 1rem;
+    font-size: $text-2xl;
+    font-weight: $font-bold;
+    color: $color-blue;
+    @include text-gradient;
+
+    @media (min-width: $layout-mobile) {
+      font-size: $text-3xl;
+    }
+  }
+
+  &Text {
+    margin-bottom: 0.5rem;
+    font-size: $text-base;
+    font-weight: $font-semibold;
+    color: $color-neutral-200;
+
+    @media (min-width: $layout-mobile) {
+      font-size: $text-2xl;
+    }
+  }
+
+  &Link {
+    font-size: $text-sm;
+    font-weight: $font-medium;
+    color: $color-neutral-500;
+    @include transition-color;
+
+    &:hover {
+      color: lighten($color-neutral-500, 15);
+    }
+
+    @media (min-width: $layout-mobile) {
+      font-size: $text-base;
+    }
+  }
+}
