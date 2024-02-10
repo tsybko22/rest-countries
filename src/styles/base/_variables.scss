@@ -21,5 +21,10 @@ $text-sm: 0.875rem;
 $text-base: 1rem;
 $text-2xl: 2rem;
 
+//Breakpoints
+$desktop: 1024px;
+
 //Other
 $shadow: 0 0 2rem $color-neutral-900;
+$border: 1px solid $color-neutral-700;
+$border-2: 2px solid $color-neutral-700;
