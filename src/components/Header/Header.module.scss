@@ -1,0 +1,18 @@
+.header {
+  display: grid;
+  place-content: center;
+  min-height: 18rem;
+  background-image: url('@images/hero-image.jpg');
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+}
+
+.logo {
+  display: flex;
+  gap: 0.75rem;
+  font-size: $text-2xl;
+  font-weight: $font-semibold;
+  color: $color-neutral-200;
+  text-decoration: none;
+}
