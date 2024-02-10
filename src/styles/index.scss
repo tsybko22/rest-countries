@@ -1,4 +1,5 @@
-@import './vendor/_reset.scss';
-@import './base/_variables.scss';
-@import './base/_common.scss';
-@import './base/_font.scss';
+@import './vendor/_reset';
+@import './base/_variables';
+@import './base/mixins';
+@import './base/_common';
+@import './base/_font';
