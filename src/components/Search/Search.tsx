@@ -7,7 +7,7 @@ const Search = () => {
     <div className={styles.search}>
       <Input
         className={styles.searchInput}
-        placeholder="Search by name, region, subregion"
+        placeholder="Search by Name, Region, Subregion"
       />
     </div>
   );
