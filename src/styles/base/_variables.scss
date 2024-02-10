@@ -20,9 +20,11 @@ $text-xs: 0.75rem;
 $text-sm: 0.875rem;
 $text-base: 1rem;
 $text-2xl: 2rem;
+$text-3xl: 3rem;
 
 //Breakpoints
-$desktop: 1024px;
+$layout-mobile: 576px; //Mobile and Tablets
+$layout-desktop: 768px; //Desktops and Laptops
 
 //Other
 $shadow: 0 0 2rem $color-neutral-900;
