@@ -1,0 +1,24 @@
+.column {
+  display: grid;
+  padding: 0;
+  margin: 0;
+  gap: 1rem;
+  grid-template-columns: repeat(auto-fill, minmax(6rem, 1fr));
+  list-style: none;
+}
+
+.skeletonImage {
+  margin-bottom: 0.5rem;
+  height: 3.5rem;
+  border-radius: $rounded;
+}
+
+.skeletonText {
+  height: 1rem;
+  border-radius: $rounded-2xl;
+}
+
+.skeletonImage,
+.skeletonText {
+  @include skeleton-animation;
+}
