@@ -1,0 +1,46 @@
+.column {
+  display: flex;
+  padding: 0;
+  margin: 0;
+  flex-direction: column;
+  gap: 2rem;
+  list-style: none;
+}
+
+.skeleton {
+  display: grid;
+  grid-template-columns: 4rem repeat(2, 1fr);
+  align-items: center;
+  gap: 1rem;
+
+  @media (min-width: $layout-desktop) {
+    grid-template-columns: 5rem repeat(4, 1fr);
+  }
+
+  &Image {
+    width: 3.5rem;
+    height: 2.5rem;
+    border-radius: $rounded;
+  }
+
+  &Text {
+    width: 100%;
+    max-width: 10rem;
+    height: 1rem;
+    border-radius: $rounded-2xl;
+
+    &:nth-child(3),
+    &:nth-child(4) {
+      display: none;
+
+      @media (min-width: $layout-desktop) {
+        display: block;
+      }
+    }
+  }
+
+  &Image,
+  &Text {
+    @include skeleton-animation;
+  }
+}
