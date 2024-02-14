@@ -13,3 +13,15 @@
   transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
   transition-duration: 150ms;
 }
+
+@mixin skeleton-animation {
+  background: linear-gradient(
+    -90deg,
+    $color-neutral-700 0%,
+    darken($color-neutral-500, 25) 50%,
+    $color-neutral-700 100%
+  );
+  background-size: 400% 400%;
+  animation: pulse 1.5s ease-in-out infinite;
+  font-size: 0;
+}

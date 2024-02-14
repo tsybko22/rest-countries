@@ -5,3 +5,12 @@ body {
   font-size: $text-base;
   font-family: $family;
 }
+
+@keyframes pulse {
+  0% {
+    background-position: 0% 0%;
+  }
+  100% {
+    background-position: -135% 0%;
+  }
+}
