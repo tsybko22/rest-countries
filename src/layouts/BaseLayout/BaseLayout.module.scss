@@ -1,14 +1,14 @@
 .mainLayout {
   padding: 1.75rem 2rem;
   background-color: $color-neutral-800;
+  border: $border;
 
   @media (min-width: $layout-desktop) {
     width: calc(100% - 3rem);
     max-width: 75rem;
     margin-inline: auto;
-    transform: translateY(-3rem);
-    border: $border;
     border-radius: $rounded-2xl;
+    transform: translateY(-3rem);
     box-shadow: $shadow;
   }
 }
