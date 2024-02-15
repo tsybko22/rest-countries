@@ -10,7 +10,10 @@ import ErrorPage from '@/pages/ErrorPage';
 import MainPage from '@/pages/MainPage';
 
 const App = () => {
-  const { data: countries, isLoading, error } = useFetch<Country[]>(getAllCountries);
+  const { data, isLoading, error } = useFetch<Country[]>(getAllCountries);
+
+  //exclude Antarctica from results
+  const countries = data?.filter((country) => country.name.common !== 'Antarctica');
 
   const router = createBrowserRouter([
     {
