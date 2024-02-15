@@ -1,11 +1,17 @@
+import { useFetch } from '@/helpers/hooks/useFetch';
 import { RouterProvider, createBrowserRouter } from 'react-router-dom';
 
+import { getAllCountries } from '@/api/countriesApi';
+import { type Country } from '@/api/index.dto';
+
+import BaseLayout from '@/layouts/BaseLayout';
 import CountryDetailsPage from '@/pages/CountryDetailsPage';
 import ErrorPage from '@/pages/ErrorPage';
 import MainPage from '@/pages/MainPage';
-import BaseLayout from './layouts/BaseLayout';
 
-const Router = () => {
+const App = () => {
+  const { data: countries, isLoading, error } = useFetch<Country[]>(getAllCountries);
+
   const router = createBrowserRouter([
     {
       path: '/',
@@ -13,7 +19,13 @@ const Router = () => {
       children: [
         {
           index: true,
-          element: <MainPage />,
+          element: (
+            <MainPage
+              countries={countries}
+              isLoading={isLoading}
+              error={error}
+            />
+          ),
         },
         {
           path: 'country/:countryName',
@@ -27,4 +39,4 @@ const Router = () => {
   return <RouterProvider router={router} />;
 };
 
-export default Router;
+export default App;
