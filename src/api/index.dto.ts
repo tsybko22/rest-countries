@@ -15,19 +15,19 @@ export interface Country {
   flags: Flags;
 }
 
-export interface Name {
+interface Name {
   common: string;
   official: string;
 }
 
-export interface Currencies {
+interface Currencies {
   [key: string]: {
     name: string;
     symbol: string;
   };
 }
 
-export interface Flags {
+interface Flags {
   png: string;
   svg: string;
   alt: string;
