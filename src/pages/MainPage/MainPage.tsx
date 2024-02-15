@@ -1,20 +1,18 @@
+import { useFetch } from '@/helpers/hooks/useFetch';
 import { Navigate } from 'react-router-dom';
 
+import { getAllCountries } from '@/api/countriesApi';
 import { type Country } from '@/api/index.dto';
 
+import CountriesTable from '@/components/CountriesTable';
 import Search from '@/components/Search';
 import CountriesSkeleton from '@/components/ui/CountriesSkeleton';
 
-import CountriesTable from '@/components/CountriesTable';
 import styles from './MainPage.module.scss';
 
-interface MainPageProps {
-  countries: Country[] | null | undefined;
-  isLoading: boolean;
-  error: Error | null;
-}
+const MainPage = () => {
+  const { data, isLoading, error } = useFetch<Country[]>(getAllCountries);
 
-const MainPage = ({ countries, isLoading, error }: MainPageProps) => {
   if (error) {
     return (
       <Navigate
@@ -23,14 +21,16 @@ const MainPage = ({ countries, isLoading, error }: MainPageProps) => {
       />
     );
   }
+  //exclude Antarctica from results
+  const countries = data?.filter((country) => country.name.common !== 'Antarctica') || [];
 
   return (
     <>
       <div className={styles.mainPageHeader}>
-        <p className={styles.mainPageTitle}>Found {countries?.length || 0} countries</p>
+        <p className={styles.mainPageTitle}>Found {countries.length || 0} countries</p>
         <Search />
       </div>
-      {countries && !isLoading ? (
+      {!isLoading ? (
         <CountriesTable countries={countries} />
       ) : (
         <CountriesSkeleton count={10} />
