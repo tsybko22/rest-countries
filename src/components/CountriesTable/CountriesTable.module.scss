@@ -1,0 +1,63 @@
+.table {
+  width: 100%;
+  border-collapse: collapse;
+
+  &Heading {
+    padding: 1.5rem 0;
+    font-size: $text-xs;
+    font-weight: $font-medium;
+    text-align: left;
+    color: $color-neutral-500;
+    border-bottom: $border;
+
+    &:nth-child(1),
+    &:nth-child(5) {
+      display: none;
+
+      @media (min-width: $layout-mobile) {
+        display: table-cell;
+      }
+    }
+  }
+
+  &Data {
+    padding: 1rem 0;
+    font-size: $text-sm;
+    font-weight: $font-medium;
+    color: $color-neutral-200;
+
+    @media (min-width: $layout-mobile) {
+      font-size: $text-base;
+      &:first-of-type {
+        width: 5rem;
+      }
+    }
+
+    & > a {
+      color: currentColor;
+      text-decoration: none;
+      @include transition-color;
+
+      &:hover {
+        color: lighten($color-neutral-200, 15);
+        text-decoration: underline;
+      }
+    }
+
+    &:nth-child(1),
+    &:nth-child(5) {
+      display: none;
+
+      @media (min-width: $layout-mobile) {
+        display: table-cell;
+      }
+    }
+  }
+
+  &Img {
+    width: 3.5rem;
+    min-height: 2.5rem;
+    border-radius: $rounded;
+    object-fit: cover;
+  }
+}
