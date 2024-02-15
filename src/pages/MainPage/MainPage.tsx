@@ -27,7 +27,7 @@ const MainPage = () => {
   return (
     <>
       <div className={styles.mainPageHeader}>
-        <p className={styles.mainPageTitle}>Found {countries.length || 0} countries</p>
+        <p className={styles.mainPageTitle}>Found {countries.length} countries</p>
         <Search />
       </div>
       {!isLoading ? (
