@@ -56,7 +56,7 @@
 
   &Img {
     width: 3.5rem;
-    min-height: 2.5rem;
+    max-height: 2.5rem;
     border-radius: $rounded;
     object-fit: cover;
   }
