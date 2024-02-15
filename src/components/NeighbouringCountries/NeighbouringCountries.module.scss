@@ -1,0 +1,33 @@
+.neighbours {
+  display: grid;
+  padding: 0;
+  margin: 0;
+  gap: 1rem;
+  grid-template-columns: repeat(auto-fill, minmax(4rem, 1fr));
+  list-style: none;
+
+  &Title {
+    margin-bottom: 1rem;
+    font-size: $text-xs;
+    font-weight: $font-medium;
+    color: $color-neutral-200;
+  }
+
+  & > a {
+    text-decoration: none;
+  }
+
+  &Img {
+    margin-bottom: 0.5rem;
+    min-height: 3.5rem;
+    object-fit: cover;
+    border-radius: $rounded;
+  }
+
+  &ItemTitle {
+    margin-bottom: 1rem;
+    font-size: $text-xs;
+    font-weight: $font-medium;
+    color: $color-neutral-200;
+  }
+}
