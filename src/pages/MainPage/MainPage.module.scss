@@ -1,0 +1,13 @@
+.mainPage {
+  &Header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  &Title {
+    font-size: $text-base;
+    font-weight: $font-semibold;
+    color: $color-neutral-500;
+  }
+}
