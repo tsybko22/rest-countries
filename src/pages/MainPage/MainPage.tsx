@@ -5,6 +5,7 @@ import { getAllCountries } from '@/api/countriesApi';
 import { type Country } from '@/api/index.dto';
 
 import CountriesTable from '@/components/CountriesTable';
+import MainContainer from '@/components/MainContainer';
 import Search from '@/components/Search';
 import CountriesSkeleton from '@/components/ui/CountriesSkeleton';
 
@@ -25,7 +26,7 @@ const MainPage = () => {
   const countries = data?.filter((country) => country.name.common !== 'Antarctica') || [];
 
   return (
-    <>
+    <MainContainer className={styles.mainPageContainer}>
       <div className={styles.mainPageHeader}>
         <p className={styles.mainPageTitle}>Found {countries.length} countries</p>
         <Search />
@@ -35,7 +36,7 @@ const MainPage = () => {
       ) : (
         <CountriesSkeleton count={10} />
       )}
-    </>
+    </MainContainer>
   );
 };
 

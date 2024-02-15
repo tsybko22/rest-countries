@@ -1,4 +1,10 @@
 .mainPage {
+  &Container {
+    @media (min-width: $layout-desktop) {
+      max-width: 75rem;
+    }
+  }
+
   &Header {
     display: flex;
     justify-content: space-between;
