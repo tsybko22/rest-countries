@@ -16,7 +16,7 @@ const App = () => {
           element: <MainPage />,
         },
         {
-          path: 'country/:countryName',
+          path: 'country/:countryCode',
           element: <CountryPage />,
         },
       ],
