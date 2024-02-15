@@ -5,7 +5,7 @@ import { getAllCountries } from '@/api/countriesApi';
 import { type Country } from '@/api/index.dto';
 
 import BaseLayout from '@/layouts/BaseLayout';
-import CountryDetailsPage from '@/pages/CountryDetailsPage';
+import CountryPage from '@/pages/CountryPage';
 import ErrorPage from '@/pages/ErrorPage';
 import MainPage from '@/pages/MainPage';
 
@@ -29,7 +29,7 @@ const App = () => {
         },
         {
           path: 'country/:countryName',
-          element: <CountryDetailsPage />,
+          element: <CountryPage />,
         },
       ],
     },
