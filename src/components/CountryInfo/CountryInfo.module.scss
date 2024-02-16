@@ -1,0 +1,87 @@
+.country {
+  &Img {
+    margin: -2.5rem auto 2rem auto;
+    width: 16rem;
+    max-height: 10rem;
+    border-radius: $rounded-xl;
+    object-fit: cover;
+  }
+
+  &Title {
+    margin-bottom: 0.5rem;
+    font-size: $text-2xl;
+    font-weight: $font-semibold;
+    color: $color-neutral-200;
+    text-align: center;
+  }
+
+  &SubTitle {
+    margin-bottom: 2rem;
+    font-size: $text-base;
+    font-weight: $font-medium;
+    color: $color-neutral-500;
+    text-align: center;
+  }
+
+  &Wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+    margin-bottom: 2rem;
+
+    @media (min-width: $layout-mobile) {
+      flex-direction: row;
+      justify-content: space-around;
+    }
+  }
+
+  &Badge {
+    padding: 1rem 0;
+    font-size: $text-base;
+    font-weight: $font-medium;
+    color: $color-neutral-200;
+    background-color: $color-neutral-700;
+    border-radius: $rounded-xl;
+
+    & > span {
+      padding: 0.5rem 1rem;
+    }
+    & > span:first-of-type {
+      border-right: 1px solid $color-neutral-800;
+    }
+    & > span:last-of-type {
+      color: $color-neutral-200;
+      font-weight: $font-bold;
+    }
+  }
+
+  &Table {
+    width: 100%;
+    border-collapse: collapse;
+
+    &Heading {
+      padding: 1.5rem 0;
+      font-size: $text-sm;
+      font-weight: $font-medium;
+
+      color: $color-neutral-500;
+      border-bottom: $border;
+
+      text-align: start;
+    }
+
+    &Data {
+      font-size: $text-base;
+      font-weight: $font-medium;
+      color: $color-neutral-200;
+      text-align: end;
+    }
+
+    &Heading,
+    &Data {
+      padding: 1.75rem 1rem;
+      border-block: $border;
+    }
+  }
+}

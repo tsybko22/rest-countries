@@ -1,0 +1,12 @@
+.loader {
+  display: block;
+  margin: 0 auto;
+}
+
+.countryContainer {
+  padding: 0 !important;
+
+  @media (min-width: $layout-desktop) {
+    max-width: 40rem;
+  }
+}
