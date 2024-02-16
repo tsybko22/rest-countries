@@ -10,7 +10,6 @@
     color: $color-neutral-500;
     border-bottom: $border;
 
-    &:nth-child(1),
     &:nth-child(5) {
       display: none;
 
@@ -44,7 +43,6 @@
       }
     }
 
-    &:nth-child(1),
     &:nth-child(5) {
       display: none;
 
@@ -55,9 +53,13 @@
   }
 
   &Img {
-    width: 3.5rem;
+    width: 2.5rem;
     max-height: 2.5rem;
     border-radius: $rounded;
     object-fit: cover;
+
+    @media (min-width: $layout-mobile) {
+      width: 3.5rem;
+    }
   }
 }

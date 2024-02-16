@@ -32,7 +32,9 @@ const CountriesTable = ({ countries }: CountriesTableProps) => {
               />
             </td>
             <td className={styles.tableData}>
-              <Link to={`/country/${country.cca2}`}>{country.name.common}</Link>
+              <Link to={`/country/${country.cca2}`}>
+                {window.innerWidth >= 576 ? country.name.common : country.cca2}
+              </Link>
             </td>
             <td className={styles.tableData}>{country.population.toLocaleString()}</td>
             <td className={styles.tableData}>{country.area.toLocaleString()}</td>

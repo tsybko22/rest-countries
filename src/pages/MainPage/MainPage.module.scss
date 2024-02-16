@@ -1,5 +1,7 @@
 .mainPage {
   &Container {
+    padding: 1rem 2rem;
+
     @media (min-width: $layout-desktop) {
       max-width: 75rem;
     }
@@ -7,13 +9,23 @@
 
   &Header {
     display: flex;
-    justify-content: space-between;
+    flex-direction: column;
     align-items: center;
+    gap: 1rem;
+
+    @media (min-width: $layout-mobile) {
+      flex-direction: row;
+      justify-content: space-between;
+    }
   }
 
   &Title {
-    font-size: $text-base;
+    font-size: $text-sm;
     font-weight: $font-semibold;
     color: $color-neutral-500;
+
+    @media (min-width: $layout-mobile) {
+      font-size: $text-base;
+    }
   }
 }
