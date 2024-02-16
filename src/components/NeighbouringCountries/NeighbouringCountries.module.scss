@@ -6,6 +6,10 @@
   grid-template-columns: repeat(auto-fill, minmax(4rem, 1fr));
   list-style: none;
 
+  &Wrapper {
+    padding: 1.75rem 2rem;
+  }
+
   &Title {
     margin-bottom: 1rem;
     font-size: $text-sm;
@@ -26,7 +30,6 @@
   }
 
   &ItemTitle {
-    margin-bottom: 1rem;
     font-size: $text-xs;
     font-weight: $font-medium;
     color: $color-neutral-200;

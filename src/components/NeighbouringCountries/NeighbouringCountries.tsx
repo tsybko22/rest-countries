@@ -31,7 +31,7 @@ const NeighbouringCountries = ({ borders }: NeighbouringCountriesProps) => {
   }
 
   return (
-    <>
+    <div className={styles.neighboursWrapper}>
       <h3 className={styles.neighboursTitle}>Neighbouring Countries</h3>
       <ul className={styles.neighbours}>
         {neighbours &&
@@ -52,7 +52,7 @@ const NeighbouringCountries = ({ borders }: NeighbouringCountriesProps) => {
             </Link>
           ))}
       </ul>
-    </>
+    </div>
   );
 };
 
