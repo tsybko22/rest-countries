@@ -17,7 +17,7 @@ const NeighbouringCountries = ({ borders }: NeighbouringCountriesProps) => {
     data: neighbours,
     isLoading,
     error,
-  } = useFetch<Country[]>(() => getCountriesByCode(borders));
+  } = useFetch<Country[]>(getCountriesByCode, borders.join(','));
 
   if (isLoading) return <NeighboursSkeleton count={3} />;
 
