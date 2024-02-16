@@ -6,7 +6,10 @@ interface State<T> {
   error: Error | null;
 }
 
-export const useFetch = <T>(fetchFunction: () => Promise<T>): State<T> => {
+export const useFetch = <T>(
+  fetchFunction: (url?: string) => Promise<T>,
+  url?: string
+): State<T> => {
   const [data, setData] = useState<T | null>(null);
   const [isLoading, setIsLoading] = useState<boolean>(false);
   const [error, setError] = useState<Error | null>(null);
@@ -15,7 +18,7 @@ export const useFetch = <T>(fetchFunction: () => Promise<T>): State<T> => {
     const fetchData = async () => {
       try {
         setIsLoading(true);
-        const result = await fetchFunction();
+        const result = await fetchFunction(url);
 
         setData(result);
       } catch (error) {
@@ -26,8 +29,7 @@ export const useFetch = <T>(fetchFunction: () => Promise<T>): State<T> => {
     };
 
     void fetchData();
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, []);
+  }, [fetchFunction, url]);
 
   return { data, isLoading, error };
 };
