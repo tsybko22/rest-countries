@@ -1,6 +1,5 @@
-import { forwardRef, type InputHTMLAttributes } from 'react';
-
 import clsx from 'clsx';
+import { forwardRef, type InputHTMLAttributes } from 'react';
 
 import styles from './Input.module.scss';
 
