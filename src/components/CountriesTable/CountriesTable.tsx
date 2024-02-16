@@ -11,17 +11,16 @@ interface CountriesTableProps {
 const CountriesTable = ({ countries }: CountriesTableProps) => {
   return (
     <table className={styles.table}>
-      {
-        <thead>
-          <tr>
-            <th className={styles.tableHeading}>Flag</th>
-            <th className={styles.tableHeading}>Name</th>
-            <th className={styles.tableHeading}>Population</th>
-            <th className={styles.tableHeading}>Area (km²)</th>
-            <th className={styles.tableHeading}>Region</th>
-          </tr>
-        </thead>
-      }
+      <thead>
+        <tr>
+          <th className={styles.tableHeading}>Flag</th>
+          <th className={styles.tableHeading}>Name</th>
+          <th className={styles.tableHeading}>Population</th>
+          <th className={styles.tableHeading}>Area (km²)</th>
+          <th className={styles.tableHeading}>Region</th>
+        </tr>
+      </thead>
+
       <tbody>
         {countries.map((country) => (
           <tr key={country.cca2}>
