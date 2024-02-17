@@ -14,7 +14,7 @@ const CountryInfo = ({ country }: CountryInfoProps) => {
       languages.push(value);
     }
 
-    return languages.join(',');
+    return languages.join(', ');
   };
 
   const getCurrencies = (): string => {
