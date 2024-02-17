@@ -1,0 +1,50 @@
+.checkbox {
+  width: 1.5rem;
+  height: 1.5rem;
+  border: 2px solid $color-neutral-500;
+  border-radius: $rounded;
+  margin-right: 0.5rem;
+  cursor: pointer;
+  @include transition-color;
+
+  &Label {
+    display: flex;
+    align-items: center;
+    font-size: $text-base;
+    font-weight: $font-medium;
+    color: $color-neutral-200;
+  }
+
+  &Input {
+    clip: rect(0 0 0 0);
+    clip-path: inset(50%);
+    height: 1px;
+    overflow: hidden;
+    position: absolute;
+    white-space: nowrap;
+    width: 1px;
+
+    &:checked + .checkbox {
+      background-color: $color-blue;
+      background-image: url('@images/done-round.svg');
+      background-repeat: no-repeat;
+      background-position: center center;
+      border: none;
+    }
+
+    &:disabled + .checkbox {
+      border-color: darken($color-neutral-500, 20);
+      cursor: not-allowed;
+    }
+
+    &:focus + .checkbox {
+      box-shadow: 0 0 0 2px $color-neutral-200;
+    }
+
+    &:checked:disabled + .checkbox {
+      border-color: darken($color-neutral-500, 20);
+      background-color: darken($color-neutral-500, 20);
+      cursor: not-allowed;
+    }
+  }
+}
