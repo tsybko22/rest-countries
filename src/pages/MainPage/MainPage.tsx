@@ -5,6 +5,7 @@ import { getAllCountries } from '@/api/countriesApi';
 import { type Country } from '@/api/index.dto';
 
 import CountriesTable from '@/components/CountriesTable';
+import FilterForm from '@/components/FilterForm';
 import MainContainer from '@/components/MainContainer';
 import Search from '@/components/Search';
 import CountriesSkeleton from '@/components/ui/CountriesSkeleton';
@@ -31,6 +32,9 @@ const MainPage = () => {
         <p className={styles.mainPageTitle}>Found {countries.length} countries</p>
         <Search />
       </div>
+
+      <FilterForm />
+
       {!isLoading ? (
         <CountriesTable countries={countries} />
       ) : (
