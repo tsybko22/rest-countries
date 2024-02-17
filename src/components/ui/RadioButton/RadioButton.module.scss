@@ -1,0 +1,44 @@
+.radio {
+  padding: 0.5rem 1rem;
+  font-size: $text-base;
+  font-weight: $font-semibold;
+  color: $color-neutral-500;
+  background-color: $color-neutral-800;
+  border-radius: $rounded-xl;
+  cursor: pointer;
+  @include transition-color;
+
+  &Label {
+    margin: 0.5rem 0;
+  }
+
+  &Input {
+    clip: rect(0 0 0 0);
+    clip-path: inset(50%);
+    height: 1px;
+    overflow: hidden;
+    position: absolute;
+    white-space: nowrap;
+    width: 1px;
+
+    &:checked + .radio {
+      color: $color-neutral-200;
+      background-color: $color-neutral-700;
+    }
+
+    &:disabled + .radio {
+      color: lighten($color-neutral-800, 10);
+      background-color: $color-neutral-800;
+      cursor: not-allowed;
+    }
+
+    &:focus + .radio {
+    }
+
+    &:checked:disabled + .radio {
+      color: $color-neutral-500;
+      background-color: lighten($color-neutral-800, 10);
+      cursor: not-allowed;
+    }
+  }
+}
