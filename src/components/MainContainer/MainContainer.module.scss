@@ -2,7 +2,7 @@
   background-color: $color-neutral-800;
   border: $border;
 
-  @media (min-width: $layout-desktop) {
+  @media (min-width: $layout-md) {
     width: calc(100% - 3rem);
     margin-inline: auto;
     border-radius: $rounded-2xl;

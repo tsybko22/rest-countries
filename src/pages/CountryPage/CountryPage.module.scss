@@ -4,7 +4,7 @@
 }
 
 .countryContainer {
-  @media (min-width: $layout-desktop) {
+  @media (min-width: $layout-md) {
     max-width: 40rem;
   }
 }

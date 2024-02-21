@@ -14,7 +14,7 @@
   align-items: center;
   gap: 1rem;
 
-  @media (min-width: $layout-mobile) {
+  @media (min-width: $layout-sm) {
     grid-template-columns: 4rem repeat(4, 1fr);
   }
 
@@ -32,7 +32,7 @@
     &:nth-child(4) {
       display: none;
 
-      @media (min-width: $layout-mobile) {
+      @media (min-width: $layout-sm) {
         display: block;
       }
     }

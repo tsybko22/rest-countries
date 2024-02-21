@@ -12,7 +12,7 @@
     color: $color-blue;
     @include text-gradient;
 
-    @media (min-width: $layout-mobile) {
+    @media (min-width: $layout-sm) {
       font-size: $text-3xl;
     }
   }
@@ -23,7 +23,7 @@
     font-weight: $font-semibold;
     color: $color-neutral-200;
 
-    @media (min-width: $layout-mobile) {
+    @media (min-width: $layout-sm) {
       font-size: $text-2xl;
     }
   }
@@ -38,7 +38,7 @@
       color: lighten($color-neutral-500, 15);
     }
 
-    @media (min-width: $layout-mobile) {
+    @media (min-width: $layout-sm) {
       font-size: $text-base;
     }
   }

@@ -23,8 +23,9 @@ $text-2xl: 2rem;
 $text-3xl: 3rem;
 
 //Breakpoints
-$layout-mobile: 576px; //Mobile and Tablets
-$layout-desktop: 768px; //Desktops and Laptops
+$layout-sm: 576px; //Mobile
+$layout-md: 768px; //Tablets
+$layout-lg: 1024px; //Desktops
 
 //Other
 $shadow: 0 0 2rem $color-neutral-900;

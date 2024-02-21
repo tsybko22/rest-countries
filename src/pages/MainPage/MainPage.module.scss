@@ -2,7 +2,7 @@
   &Container {
     padding: 1rem 2rem;
 
-    @media (min-width: $layout-desktop) {
+    @media (min-width: $layout-md) {
       max-width: 75rem;
     }
   }
@@ -13,7 +13,7 @@
     align-items: center;
     gap: 1rem;
 
-    @media (min-width: $layout-mobile) {
+    @media (min-width: $layout-sm) {
       flex-direction: row;
       justify-content: space-between;
     }
@@ -24,8 +24,16 @@
     font-weight: $font-semibold;
     color: $color-neutral-500;
 
-    @media (min-width: $layout-mobile) {
+    @media (min-width: $layout-sm) {
       font-size: $text-base;
+    }
+  }
+
+  &Wrapper {
+    @media (min-width: $layout-lg) {
+      display: grid;
+      gap: 2rem;
+      grid-template-columns: 1fr 3fr;
     }
   }
 }
