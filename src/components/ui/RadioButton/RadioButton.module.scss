@@ -33,6 +33,7 @@
     }
 
     &:focus + .radio {
+      background-color: lighten($color-neutral-800, 20);
     }
 
     &:checked:disabled + .radio {
