@@ -1,6 +1,6 @@
 import { Link } from 'react-router-dom';
 
-import { type Country } from '@/api/index.dto';
+import { type Country } from '@/types';
 
 import styles from './CountriesTable.module.scss';
 

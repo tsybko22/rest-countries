@@ -1,4 +1,4 @@
-import { Country } from '@/api/index.dto';
+import { type Country } from '@/types';
 
 import styles from './CountryInfo.module.scss';
 

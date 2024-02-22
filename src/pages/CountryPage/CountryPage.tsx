@@ -2,7 +2,7 @@ import { useFetch } from '@/helpers/hooks/useFetch';
 import { Navigate, useParams } from 'react-router-dom';
 
 import { getCountriesByCode } from '@/api/countriesApi';
-import { type Country } from '@/api/index.dto';
+import { type Country } from '@/types';
 
 import CountryInfo from '@/components/CountryInfo';
 import MainContainer from '@/components/MainContainer';

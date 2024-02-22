@@ -2,7 +2,7 @@ import { useFetch } from '@/helpers/hooks/useFetch';
 import { Link, Navigate } from 'react-router-dom';
 
 import { getCountriesByCode } from '@/api/countriesApi';
-import { Country } from '@/api/index.dto';
+import { type Country } from '@/types';
 
 import NeighboursSkeleton from '../ui/NeighboursSkeleton';
 

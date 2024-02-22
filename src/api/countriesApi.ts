@@ -1,5 +1,5 @@
 import { get } from '@/helpers/utils';
-import { Country } from './index.dto';
+import { Country } from '@/types';
 
 const BASE_URL = 'https://restcountries.com/v3.1';
 
