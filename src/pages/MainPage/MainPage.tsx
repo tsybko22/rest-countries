@@ -1,4 +1,5 @@
 import { useFetch } from '@/helpers/hooks/useFetch';
+import { useEffect, useMemo, useState } from 'react';
 import { Navigate } from 'react-router-dom';
 
 import { getAllCountries } from '@/api/countriesApi';
@@ -14,6 +15,34 @@ import styles from './MainPage.module.scss';
 
 const MainPage = () => {
   const { data, isLoading, error } = useFetch<Country[]>(getAllCountries);
+  //exclude Antarctica from list
+  const countries = useMemo(
+    () => data?.filter((country) => country.name.common !== 'Antarctica') || [],
+    [data]
+  );
+  const [filteredCountries, setFilteredCountries] = useState<Country[]>([]);
+
+  const [searchValue, setSearchValue] = useState<string>('');
+
+  const handleSearch = (searchTerm?: string) => {
+    if (typeof searchTerm === 'string') {
+      setSearchValue(searchTerm);
+    }
+
+    const countiesByName = countries.filter(({ name }) =>
+      name.common.toLowerCase().includes(searchValue)
+    );
+    setFilteredCountries(countiesByName);
+  };
+
+  useEffect(() => {
+    handleSearch();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [searchValue]);
+
+  useEffect(() => {
+    setFilteredCountries(countries);
+  }, [countries]);
 
   if (error) {
     return (
@@ -23,23 +52,27 @@ const MainPage = () => {
       />
     );
   }
-  //exclude Antarctica from results
-  const countries = data?.filter((country) => country.name.common !== 'Antarctica') || [];
 
   return (
     <MainContainer className={styles.mainPageContainer}>
       <div className={styles.mainPageHeader}>
-        <p className={styles.mainPageTitle}>Found {countries.length} countries</p>
-        <Search />
+        <p className={styles.mainPageTitle}>Found {filteredCountries.length} countries</p>
+        {!isLoading && (
+          <Search
+            searchTerm={searchValue}
+            onSearch={handleSearch}
+          />
+        )}
       </div>
 
-      <FilterForm />
-
-      {!isLoading ? (
-        <CountriesTable countries={countries} />
-      ) : (
-        <CountriesSkeleton count={10} />
-      )}
+      <div className={styles.mainPageWrapper}>
+        <FilterForm />
+        {!isLoading ? (
+          <CountriesTable countries={filteredCountries} />
+        ) : (
+          <CountriesSkeleton count={10} />
+        )}
+      </div>
     </MainContainer>
   );
 };
