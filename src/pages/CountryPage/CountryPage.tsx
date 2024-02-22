@@ -32,7 +32,10 @@ const CountryPage = () => {
       {data && !isLoading ? (
         <>
           <CountryInfo country={data[0]} />
-          {data[0].borders && <NeighbouringCountries borders={data[0].borders} />}
+          {
+            // eslint-disable-next-line @typescript-eslint/no-unnecessary-condition
+            data[0].borders && <NeighbouringCountries borders={data[0].borders} />
+          }
         </>
       ) : (
         <Loader className={styles.loader} />
