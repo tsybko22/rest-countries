@@ -4,6 +4,8 @@
 }
 
 .countryContainer {
+  min-height: 100vh;
+
   @media (min-width: $layout-md) {
     max-width: 40rem;
   }
