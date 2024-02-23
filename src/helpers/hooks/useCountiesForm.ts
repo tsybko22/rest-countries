@@ -37,6 +37,14 @@ export const useCountriesForm = (
   const handleFormFilter = () => {
     let newFilteredCountries: Country[] = [...countries];
 
+    if (formData.region === 'all') {
+      newFilteredCountries = [...countries];
+    } else {
+      newFilteredCountries = newFilteredCountries.filter(
+        (country) => country.region.toLowerCase() === formData.region
+      );
+    }
+
     if (formData.independent) {
       newFilteredCountries = newFilteredCountries.filter(
         (country) => country.independent
@@ -45,14 +53,6 @@ export const useCountriesForm = (
 
     if (formData.unMember) {
       newFilteredCountries = newFilteredCountries.filter((country) => country.unMember);
-    }
-
-    if (formData.region === 'all') {
-      newFilteredCountries = [...countries];
-    } else {
-      newFilteredCountries = newFilteredCountries.filter(
-        (country) => country.region.toLowerCase() === formData.region
-      );
     }
 
     //Before setting the new state filter array using searchTerm
