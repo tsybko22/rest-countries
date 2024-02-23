@@ -24,6 +24,17 @@
     }
   }
 
+  &Title {
+    margin-top: 1rem;
+    font-size: $text-base;
+    font-weight: $font-bold;
+    color: $color-neutral-500;
+
+    @media (min-width: $layout-sm) {
+      font-size: $text-2xl;
+    }
+  }
+
   &Data {
     padding: 1rem 0;
     font-size: $text-sm;
