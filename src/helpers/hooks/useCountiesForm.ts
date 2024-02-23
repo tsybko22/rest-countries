@@ -56,11 +56,11 @@ export const useCountriesForm = (
     }
 
     //Before setting the new state filter array using searchTerm
-    setFilteredCountries(
-      newFilteredCountries.filter(({ name }) =>
-        name.common.toLowerCase().includes(searchTerm)
-      )
+    newFilteredCountries = newFilteredCountries.filter(({ name }) =>
+      name.common.toLowerCase().includes(searchTerm.toLowerCase())
     );
+
+    setFilteredCountries(newFilteredCountries);
   };
 
   useEffect(() => {
