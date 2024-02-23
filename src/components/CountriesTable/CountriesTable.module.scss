@@ -3,6 +3,10 @@
   width: 100%;
   border-collapse: collapse;
 
+  @media (min-width: $layout-sm) {
+    table-layout: fixed;
+  }
+
   &Heading {
     padding: 1.5rem 0;
     font-size: $text-xs;
