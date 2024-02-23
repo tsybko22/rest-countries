@@ -1,9 +1,10 @@
-import { useFetch } from '@/helpers/hooks/useFetch';
-import { useEffect, useMemo, useState } from 'react';
+import { useMemo, useState } from 'react';
 import { Navigate } from 'react-router-dom';
 
 import { getAllCountries } from '@/api/countriesApi';
-import { type Country } from '@/api/index.dto';
+import { useCountriesForm } from '@/helpers/hooks/useCountiesForm';
+import { useFetch } from '@/helpers/hooks/useFetch';
+import { type Country } from '@/types';
 
 import CountriesTable from '@/components/CountriesTable';
 import FilterForm from '@/components/FilterForm';
@@ -15,34 +16,17 @@ import styles from './MainPage.module.scss';
 
 const MainPage = () => {
   const { data, isLoading, error } = useFetch<Country[]>(getAllCountries);
-  //exclude Antarctica from list
+  //Exclude Antarctica from list
   const countries = useMemo(
     () => data?.filter((country) => country.name.common !== 'Antarctica') || [],
     [data]
   );
-  const [filteredCountries, setFilteredCountries] = useState<Country[]>([]);
-
   const [searchValue, setSearchValue] = useState<string>('');
+  const { formState, filteredCountries } = useCountriesForm(countries, searchValue);
 
-  const handleSearch = (searchTerm?: string) => {
-    if (typeof searchTerm === 'string') {
-      setSearchValue(searchTerm);
-    }
-
-    const countiesByName = countries.filter(({ name }) =>
-      name.common.toLowerCase().includes(searchValue)
-    );
-    setFilteredCountries(countiesByName);
+  const handleSearch = (searchTerm: string) => {
+    setSearchValue(searchTerm);
   };
-
-  useEffect(() => {
-    handleSearch();
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [searchValue]);
-
-  useEffect(() => {
-    setFilteredCountries(countries);
-  }, [countries]);
 
   if (error) {
     return (
@@ -57,16 +41,19 @@ const MainPage = () => {
     <MainContainer className={styles.mainPageContainer}>
       <div className={styles.mainPageHeader}>
         <p className={styles.mainPageTitle}>Found {filteredCountries.length} countries</p>
-        {!isLoading && (
-          <Search
-            searchTerm={searchValue}
-            onSearch={handleSearch}
-          />
-        )}
+
+        <Search
+          searchTerm={searchValue}
+          onSearch={handleSearch}
+        />
       </div>
 
       <div className={styles.mainPageWrapper}>
-        <FilterForm />
+        <FilterForm
+          formData={formState.formData}
+          setFormData={formState.setFormData}
+        />
+
         {!isLoading ? (
           <CountriesTable countries={filteredCountries} />
         ) : (

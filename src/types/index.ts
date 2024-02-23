@@ -15,20 +15,36 @@ export interface Country {
   flags: Flags;
 }
 
-export interface Name {
+export type Name = {
   common: string;
   official: string;
-}
+};
 
-export interface Currencies {
+export type Currencies = {
   [key: string]: {
     name: string;
     symbol: string;
   };
-}
+};
 
-export interface Flags {
+export type Flags = {
   png: string;
   svg: string;
   alt: string;
+};
+
+export type Region =
+  | 'all'
+  | 'europe'
+  | 'americas'
+  | 'antarctic'
+  | 'africa'
+  | 'asia'
+  | 'oceania';
+
+export interface FilterCountriesForm {
+  sortBy: 'population' | 'name' | 'area';
+  region: Region;
+  unMember: boolean;
+  independent: boolean;
 }

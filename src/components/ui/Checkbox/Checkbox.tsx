@@ -7,13 +7,12 @@ interface CheckboxProps extends Omit<InputHTMLAttributes<HTMLInputElement>, 'typ
   labelText?: string;
 }
 
-const Checkbox = ({ labelText, checked, ...props }: CheckboxProps) => {
+const Checkbox = ({ labelText, ...props }: CheckboxProps) => {
   return (
     <label className={styles.checkboxLabel}>
       <input
         className={styles.checkboxInput}
         type="checkbox"
-        checked={checked}
         {...props}
       />
       <span className={styles.checkbox}></span>

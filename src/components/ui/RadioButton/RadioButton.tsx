@@ -7,13 +7,12 @@ interface RadioButtonProps extends Omit<InputHTMLAttributes<HTMLInputElement>, '
   labelText?: string;
 }
 
-const RadioButton = ({ labelText, checked, ...props }: RadioButtonProps) => {
+const RadioButton = ({ labelText, ...props }: RadioButtonProps) => {
   return (
     <label className={styles.radioLabel}>
       <input
         type="radio"
         className={styles.radioInput}
-        checked={checked}
         {...props}
       />
       <span className={styles.radio}>{labelText}</span>
