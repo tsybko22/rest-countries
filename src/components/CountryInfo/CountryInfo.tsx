@@ -66,7 +66,7 @@ const CountryInfo = ({ country }: CountryInfoProps) => {
           </tr>
           <tr className={styles.countryTableRow}>
             <th className={styles.countryTableHeading}>Continents</th>
-            <td className={styles.countryTableData}>{country.continents}</td>
+            <td className={styles.countryTableData}>{country.continents.join(', ')}</td>
           </tr>
         </tbody>
       </table>
