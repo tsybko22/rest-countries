@@ -50,7 +50,7 @@ const CountryInfo = ({ country }: CountryInfoProps) => {
         <tbody>
           <tr className={styles.countryTableRow}>
             <th className={styles.countryTableHeading}>Capital</th>
-            <td className={styles.countryTableData}>{country.capital}</td>
+            <td className={styles.countryTableData}>{country.capital.join(', ')}</td>
           </tr>
           <tr className={styles.countryTableRow}>
             <th className={styles.countryTableHeading}>Subregion</th>
