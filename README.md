@@ -6,8 +6,6 @@
 
 This is a web application that provides an interface for users to explore information about countries worldwide. Users can view a list of countries sorted by various criteria, filter countries by regions, membership in the United Nations, or independence status, search for countries by name, and view detailed information about individual countries including population, area, capital, and neighboring countries.
 
-_This project was built on the basic functionality of React in order to understand how to use it._
-
 ## Features
 
 - View a list of countries sorted by population by default.
